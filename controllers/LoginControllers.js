@@ -1,4 +1,4 @@
-// const adminlogin = require('../models/LoginModel');
+const adminlogin = require('../models/LoginModel');
 
 const adminregister = require('../models/RegisterModel');
 
