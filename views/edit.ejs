@@ -1,0 +1,178 @@
+<%- include('header') %>
+
+
+  <div class="page-wrapper">
+
+
+    <!-- <form method="post" action="/admin/updateData">
+    <input type="text" value="<%= single.id %>" name="id"/>
+    <table border="1">
+        <tr>
+            <td>Student id</td>
+            <td><input type="text" value="<%= single.grid %>" name="grid"/></td>
+        </tr>
+        <tr>
+            <td>Student Name</td>
+            <td><input type="text" value="<%= single.name %>" name="name"/></td>
+        </tr>
+        <tr>
+            <td>Student Email</td>
+            <td><input type="email" value="<%= single.email %>" name="email"/></td>
+        </tr>
+        <tr>
+            <td>Student Password</td>
+            <td><input type="password" value="<%= single.password %>" name="password"/></td>
+        </tr>
+        <tr>
+            <td>Student contact</td>
+            <td><input type="text" value="<%= single.contact %>" name="contact"/></td>
+        </tr>
+        <tr>
+            <td>student course</td>
+            <td>
+                <input type="checkbox" <% if(single.course.includes("html")) { %> checked <% } %>value="html" name="course"/>html
+                <input type="checkbox" <% if(single.course.includes("css")) { %> checked <% } %> value="css" name="course"/>css
+                <input type="checkbox" <% if(single.course.includes("boostrap")) { %> checked <% } %> value="boostrap" name="course"/>boostrap
+                <input type="checkbox" <% if(single.course.includes("javascrit")) { %> checked <% } %> value="javascrit" name="course"/>javascrit
+                <input type="checkbox" <% if(single.course.includes("node-js")) { %> checked <% } %> value="node js" name="course"/>node-js
+                <input type="checkbox" <% if(single.course.includes("photoshop")) { %> checked <% } %> value="photoshop" name="course"/>photoshop
+                <input type="checkbox" <% if(single.course.includes("figma")) { %> checked <% } %> value="figma" name="course"/>figma
+                <input type="checkbox" <% if(single.course.includes("androd")) { %> checked <% } %> value="androd" name="course"/>androd
+                <input type="checkbox" <% if(single.course.includes("flutter")) { %> checked <% } %> value="flutter" name="course"/>flutter
+                <input type="checkbox" <% if(single.course.includes("c")) { %> checked <% } %> value="c" name="course"/>c
+                <input type="checkbox" <% if(single.course.includes("c++")) { %> checked <% } %> value="c++" name="course"/>c++
+                <input type="checkbox" <% if(single.course.includes("java")) { %> checked <% } %> value="java" name="course"/>java
+                <input type="checkbox" <% if(single.course.includes("php")) { %> checked <% } %> value="php" name="course"/>php
+            </td>
+        </tr>
+        <tr>
+            <td>Student fees</td>
+            <td><input type="text" value="<%= single.fees %>" name="fees"/></td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td><input type="submit" value="submit"/></td>
+        </tr>
+    </table>
+</form> -->
+
+
+
+
+
+    <div class="container">
+      <form method="post" action="/admin/updateData">
+        <h4 class="display-20"> Basic Info </h4>
+        <!-- TEXTB0X: FIRST NAME -->
+        <input type="hidden" value="<%= single.id %>" name="id" />
+        <label for="id">Id</label> <br>
+        <div class="form-group d-flex">
+          <input class="form-control col-sm-4" type="text" value="<%= single.grid %>" name="grid" placeholder="id">
+        </div>
+
+        <label for="name">Name</label> <br>
+        <div class="form-group d-flex">
+          <input class="form-control col-sm-4" type="text" value="<%= single.name %>" name="name"
+            placeholder="Full name">
+        </div>
+
+        <label for="email">Email</label> <br>
+        <div class="form-group d-flex">
+          <input class="form-control col-sm-4" type="email" value="<%= single.email %>" name="email"
+            placeholder="Email">
+        </div>
+
+        <label for="password">Password</label> <br>
+        <div class="form-group d-flex">
+          <input class="form-control col-sm-4" type="password" value="<%= single.password %>" name="password"
+            placeholder="Password">
+        </div>
+
+        <!-- GENDER -->
+        <div class="form-group">
+          <label for="gender">Gender</label> <br>
+          <input type="radio" name="gender" <% if(single.gender=="male" ) { %> checked <% } %> value="male"> Male
+            &nbsp;&nbsp;&nbsp;
+            <input type="radio" name="gender" <% if(single.gender=="female" ) { %> checked <% } %> value="female">
+              Female
+        </div>
+        <!-- Contact -->
+        <label for="contact">Contact</label> <br>
+        <div class="form-group d-flex">
+          <input class="form-control" type="text" value="<%= single.contact %>" name="contact" placeholder="Contact">
+        </div>
+
+        <div class="form-group">
+          <label for="course">Course</label> <br>
+          <input type="checkbox" value="html" <% if(single.course.includes('html')) { %> checked <% } %> name="course"
+            /> html&nbsp;&nbsp;
+            <input type="checkbox" value="css" <% if(single.course.includes('css')) { %> checked <% } %> name="course"
+              /> css&nbsp;&nbsp;
+              <input type="checkbox" value="boostrap" <% if(single.course.includes('boostrap')) { %> checked <% } %>
+                name="course" /> boostrap&nbsp;&nbsp;
+                <input type="checkbox" value="javascrit" <% if(single.course.includes('javascrit')) { %> checked <% } %>
+                  name="scourse" /> javascrit&nbsp;&nbsp;
+                  <input type="checkbox" value="node-js" <% if(single.course.includes('node-js')) { %> checked <% } %>
+                    name="course" /> node-js&nbsp;&nbsp;
+                    <input type="checkbox" value="photoshop" <% if(single.course.includes('photoshop')) { %> checked <%
+                      } %> name="course" /> photoshop&nbsp;&nbsp;
+                      <input type="checkbox" value="figma" <% if(single.course.includes('figma')) { %> checked <% } %>
+                        name="course" /> figma&nbsp;&nbsp;
+                        <input type="checkbox" value="androd" <% if(single.course.includes('androd')) { %> checked <% }
+                          %> name="course" /> androd&nbsp;&nbsp;
+                          <input type="checkbox" value="flutter" <% if(single.course.includes('flutter')) { %> checked
+                          <% } %> name="course" /> flutter&nbsp;&nbsp;
+                            <input type="checkbox" value="c" <% if(single.course.includes('c')) { %> checked <% } %>
+                              name="course" /> c&nbsp;&nbsp;
+                              <input type="checkbox" value="c++" <% if(single.course.includes('c++')) { %> checked <% }
+                                %> name="course" /> c++&nbsp;&nbsp;
+                                <input type="checkbox" value="java" <% if(single.course.includes('java')) { %> checked
+                                <% } %> name="course" /> java&nbsp;&nbsp;
+                                  <input type="checkbox" value="php" <% if(single.course.includes('php')) { %> checked
+                                  <% } %> name="course" /> php&nbsp;&nbsp;
+                                    <br>
+        </div>
+
+        <!-- Contact -->
+        <label for="fees">Fees</label> <br>
+        <div class="form-group d-flex">
+          <input class="form-control" type="text" value="<%= single.fees %>" name="fees" placeholder="Fees">
+        </div>
+
+        <label for="state">State</label> <br>
+        <div class="form-group d-flex">
+          <select class="form-control col-sm-4" name="state">
+            <option value="">---Select state----</option>
+
+            <% let state=["Gujarat","Maharashtr","Rajsthan","Punjab","Goa"]; for(let i in state) { %>
+              <option <% if(single.state==state[i]) { %> selected <% } %> value="<%= state[i] %>"> <%= state[i] %>
+              </option>
+              <% } %>
+
+          </select>
+        </div>
+
+        <!-- <label for="contact">Image</label> <br>
+      <div class="form-group d-flex">
+        <input class="form-control" type="file" name="avatar">
+      </div> -->
+
+        <div class="form-group d-flex">
+          <input type="submit" value="submit" />
+        </div>
+      </form>
+    </div>
+    <br>
+    <!-- BUTTON: SUBMIT -->
+    <!-- <a class="btn btn-primary mb-5" type="submin" value="submin">
+    Submit
+  </a> -->
+
+
+
+
+
+  </div>
+
+  <%- include('footer') %>
