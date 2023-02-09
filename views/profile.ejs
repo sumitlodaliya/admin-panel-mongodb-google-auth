@@ -66,12 +66,12 @@
             <div class="tab-pane active" id="home">
                 <hr>
                   <form class="form" action="/admin/updateProfileData" method="post" id="registrationForm">
-                    <input type="text" name="profileid" value="<%= userdata.id %>"/>
+                    <input type="hidden" name="profileid" value="<%= userdata.id %>"/>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
                               <label for="first_name"><h4>First name</h4></label>
-                              <input type="text" value="<%= userdata.name %>" class="form-control" name="name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                              <input type="text" value="<%=userdata.name %>" class="form-control" name="name" id="first_name" placeholder="first name" title="enter your first name if any.">
                           </div>
                       </div>
                       <!-- <div class="form-group">

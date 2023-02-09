@@ -12,17 +12,39 @@ module.exports.login = (req, res) => {
     return res.redirect('/admin/');
 }
 
+module.exports.loginData = async(req, res) => {
 
-module.exports.loginData = (req, res) => {
-    return res.redirect('/admin/');
+    try {
+        const adminData = await adminlogin.create({
+            email: req.body.email,
+            password: req.body.password
+        });
+        if (!adminData) {
+            console.log("Plese Insert You Data");
+            return res.redirect('back')
+        }
+        else {
+            console.log("Data Insert Successfuly");
+            return res.redirect('/admin/');
+        }
+    }
+    catch (err) {
+        if (err) {
+            console.log(err);
+            return false;
+        }
+    }
+
+
+    
 }
 
-
-
+module.exports.loginDatacallback = (req, res) => {
+    return res.redirect('/admin/');
+}
 module.exports.forgotemail = (req, res) => {
     return res.render('forgotemail');
 }
-
 module.exports.forgotemaildata = (req, res) => {
 
     let email = req.body.email;
@@ -61,12 +83,9 @@ module.exports.forgotemaildata = (req, res) => {
         return res.redirect('/login/otp');
     })
 }
-
-
 module.exports.otp = (req, res) => {
     return res.render('otp');
 }
-
 module.exports.otpData = (req, res) => {
 
     if (req.cookies.userotp.otp == req.body.otp) {
@@ -80,9 +99,6 @@ module.exports.otpData = (req, res) => {
 module.exports.newpass = (req, res) => {
     return res.render('newpass');
 }
-
-
-
 module.exports.newpassData = (req,res) => {
     console.log(req.body);
     let newpass = req.body.newpass;
